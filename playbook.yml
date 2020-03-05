@@ -13,7 +13,7 @@
       - snmp-server enable traps ospf errors
       - snmp-server enable traps ospf retransmit
       - snmp-server enable traps ospf lsa
-      - snmp-server host 192.168.161.110 version 2c public udp-port 161
+      - snmp-server host 10.168.161.110 version 2c public udp-port 161
       
 
 
