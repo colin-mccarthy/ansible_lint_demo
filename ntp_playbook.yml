@@ -4,15 +4,14 @@
 
 
   vars:
-  
+
     ntp_servers:
       - ntp server 10.10.10.10
       - ntp server 10.10.10.11
-      
-      
+
 
   tasks:
-  
+
   - name: "GET CONFIG"
     ios_command:
       commands:
@@ -29,7 +28,7 @@
     register: set_ntp
 
   - name: RUN 'Remove NTP'
-    when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
+    when: "item not in ntp_servers"
     with_items: "{{ get_config.stdout_lines[0] }}"
     register: remove_ntp
     ios_config:
